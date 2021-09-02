@@ -13,7 +13,9 @@ const multer = require('../middleware/multer-config');
 
 
 // Logique metier, routes disponibles dans application
-router.post('/', auth, multer, sauceCtrl.createSauce);// Envoi des données
+//Application middleware auth.js aux routes avec auth
+//Ajout middleware multer à route POST et PUT
+router.post('/', auth, multer, sauceCtrl.createSauce);// Envoi des données 
 router.put('/:id', auth, multer, sauceCtrl.modifySauce);// Modification de l'id
 router.delete('/:id', auth, sauceCtrl.deleteSauce);// Suppression de l'id
 router.get('/', auth, sauceCtrl.getAllSauces);// Récupère tout les objets

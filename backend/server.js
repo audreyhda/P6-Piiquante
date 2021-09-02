@@ -18,10 +18,12 @@ const normalizePort = val => {
   return false;
 };
 //paramètrage du port avec méthode .set de Express
+//la fonction normalizePort renvoie un port valide, qu'il soit fourni sous la forme d'un numéro ou d'une chaîne ;
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 // Fonction errorHandler recherche les différentes erreurs et sont ensuite enregistrée dans le serveur
+//la fonction errorHandler  recherche les différentes erreurs et les gère de manière appropriée. Elle est ensuite enregistrée dans le serveur
 const errorHandler = error => {
   if (error.syscall !== 'listen') {
     throw error;
@@ -52,4 +54,5 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 // le serveur écoute les requêtes sur le port
+//un écouteur d'évènements est enregistré, consignant le port sur lequel le serveur s'exécute dans la console
 server.listen(port);

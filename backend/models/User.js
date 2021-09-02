@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');// Mongoose qui facilite les interactions avec notre base de données MongoDB
-// Valide l'email unique
+// Mongoose qui facilite les interactions avec notre base de données MongoDB
+const mongoose = require('mongoose');
+//Package de validation pour pré-valider les informations
 const uniqueValidator = require('mongoose-unique-validator');
 
 // Deux utilisateurs ne peuvent pas utiliser la même adresse mail
